@@ -21,14 +21,14 @@ header{
   padding:35px 15px;
 }
 
-/* LOGO */
+/* LOGO ANIMADO */
 .logo{
   width:190px;
   margin-bottom:10px;
   filter:
     drop-shadow(0 0 4px #fff)
     drop-shadow(0 0 10px #ffcc00)
-    drop-shadow(0 0 20px rgba(255,204,0,.8));
+    drop-shadow(0 0 22px rgba(255,204,0,.9));
   animation:floatLogo 3.5s ease-in-out infinite;
 }
 
@@ -53,22 +53,18 @@ h1{
 .player-box{
   margin:30px auto;
   background:#111;
-  border-radius:20px;
-  padding:20px;
+  border-radius:22px;
+  padding:25px 15px;
   width:90%;
   max-width:420px;
-  box-shadow:0 0 25px rgba(0,0,0,.7);
+  box-shadow:0 0 30px rgba(0,0,0,.8);
 }
 
 .player-box h2{
-  margin:0 0 10px;
+  margin:0 0 12px;
   color:#ffcc00;
   font-size:18px;
-}
-
-audio{
-  width:100%;
-  margin-top:10px;
+  letter-spacing:1px;
 }
 
 /* BOTONES */
@@ -90,14 +86,15 @@ audio{
 
 .buttons a:hover{
   background:#fff;
-  transform:scale(1.05);
+  transform:scale(1.06);
 }
 
+/* FOOTER */
 footer{
   margin-top:30px;
   padding:15px;
   font-size:13px;
-  background:rgba(0,0,0,.5);
+  background:rgba(0,0,0,.55);
 }
 </style>
 </head>
@@ -105,22 +102,22 @@ footer{
 <body>
 
 <header>
-  <img src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
-       alt="Radio La N 96.3 FM"
-       class="logo">
+  <img
+    src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
+    alt="Radio La N 96.3 FM"
+    class="logo">
 
   <h1>Radio La N 96.3 FM</h1>
   <div class="slogan">SUENA DIFERENTE</div>
 </header>
 
-<!-- PLAYER -->
+<!-- PLAYER FUNCIONAL -->
 <div class="player-box">
   <h2>🔴 EN VIVO</h2>
 
-  <audio controls autoplay>
-    <source src="http://s28.myradiostream.com:30500/" type="audio/mpeg">
-    Tu navegador no soporta audio en vivo.
-  </audio>
+  <!-- PLAYER OFICIAL MyRadioStream -->
+  <script src="//myradiostream.com/embed/Anghelo"></script>
+
 </div>
 
 <div class="buttons">
