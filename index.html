@@ -12,42 +12,49 @@
 
 body{
 font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#000000,#c70000,#ffcc00);
+background:linear-gradient(135deg,#000000,#b30000,#ffcc00);
 background-size:400% 400%;
-animation:bgmove 10s infinite;
+animation:bg 12s infinite;
 color:#fff;
-text-align:center;
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+text-align:center;
 }
 
-@keyframes bgmove{
+@keyframes bg{
 0%{background-position:0% 50%}
 50%{background-position:100% 50%}
 100%{background-position:0% 50%}
 }
 
 .container{
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.6);
 padding:30px;
-border-radius:25px;
+border-radius:28px;
 width:95%;
-max-width:420px;
-box-shadow:0 0 30px rgba(0,0,0,.6);
+max-width:430px;
+box-shadow:0 0 40px rgba(0,0,0,.7);
 }
 
+/* LOGO ANIMADO */
 .logo{
-width:160px;
+width:180px;
 margin-bottom:15px;
-animation:pulse 2s infinite;
+animation:float 3s ease-in-out infinite, glow 2.5s infinite;
 }
 
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.06)}
-100%{transform:scale(1)}
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+@keyframes glow{
+0%{filter:drop-shadow(0 0 5px #ffcc00)}
+50%{filter:drop-shadow(0 0 20px #ffcc00)}
+100%{filter:drop-shadow(0 0 5px #ffcc00)}
 }
 
 h1{
@@ -60,18 +67,18 @@ color:#ffcc00;
 }
 
 .slogan{
-margin-top:5px;
 font-weight:300;
 letter-spacing:1px;
+margin-bottom:10px;
 }
 
 .live{
-margin:15px auto;
+display:inline-block;
+margin:12px auto;
+padding:6px 18px;
 background:#ff0000;
-padding:6px 16px;
 border-radius:20px;
 font-weight:600;
-display:inline-block;
 animation:blink 1.2s infinite;
 }
 
@@ -81,7 +88,7 @@ animation:blink 1.2s infinite;
 }
 
 #stream{
-margin-top:20px;
+margin-top:18px;
 }
 
 .buttons{
@@ -91,8 +98,8 @@ margin-top:25px;
 .buttons a{
 display:block;
 margin:10px 0;
-padding:12px;
-border-radius:30px;
+padding:14px;
+border-radius:35px;
 text-decoration:none;
 font-weight:600;
 background:#ffcc00;
@@ -102,13 +109,13 @@ transition:.3s;
 
 .buttons a:hover{
 background:#fff;
-transform:scale(1.05);
+transform:scale(1.06);
 }
 
 footer{
 margin-top:20px;
 font-size:.8em;
-opacity:.8;
+opacity:.85;
 }
 </style>
 </head>
@@ -117,7 +124,11 @@ opacity:.8;
 
 <div class="container">
 
-<!-- SI AÚN NO TIENES LOGO, USA TEXTO -->
+<!-- LOGO -->
+<img src="https://user1472.na.imgto.link/public/20260117/la-n.avif"
+     alt="Radio La N 96.3 FM"
+     class="logo">
+
 <h1>Radio La <span>N</span></h1>
 <p class="slogan">96.3 FM · Suena Diferente</p>
 
@@ -126,10 +137,10 @@ opacity:.8;
 <div id="stream"></div>
 
 <div class="buttons">
-<a href="#">📲 Descarga la App</a>
-<a href="#">📘 Facebook</a>
-<a href="https://wa.me/51984412853" target="_blank">💬 WhatsApp Oyentes</a>
-<a href="https://wa.me/51942883375" target="_blank">📢 Publicidad</a>
+<a href="#">📲 Próximamente App Oficial</a>
+<a href="#">📘 Facebook (oficial)</a>
+<a href="https://wa.me/51999999999" target="_blank">💬 WhatsApp Oyentes</a>
+<a href="https://wa.me/51988888888" target="_blank">📢 Publicidad</a>
 </div>
 
 <footer>
@@ -149,7 +160,7 @@ radioname: 'Radio La N 96.3 FM',
 userinterface: 'big',
 backgroundcolor: '#ffffff',
 fontcolor: '#000000',
-hightlightcolor: '#c70000',
+hightlightcolor: '#b30000',
 fontname: 'Poppins',
 googlefont: 'Poppins',
 scroll: 'true',
