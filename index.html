@@ -5,175 +5,140 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radio La N 96.3 FM | Suena Diferente</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#000000,#a00000,#ffcc00);
-background-size:400% 400%;
-animation:bg 12s infinite;
-color:#fff;
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#000,#111,#ffcc00);
+  color:#fff;
+  text-align:center;
 }
 
-@keyframes bg{
-0%{background-position:0% 50%}
-50%{background-position:100% 50%}
-100%{background-position:0% 50%}
+/* HEADER */
+header{
+  padding:35px 15px;
 }
 
-.container{
-background:rgba(0,0,0,.65);
-padding:32px;
-border-radius:30px;
-width:95%;
-max-width:440px;
-box-shadow:0 0 45px rgba(0,0,0,.8);
-}
-
-/* LOGO SIN FONDO - ANIMADO */
+/* LOGO */
 .logo{
-width:190px;
-margin-bottom:10px;
-animation:float 3.2s ease-in-out infinite, glow 3s infinite;
+  width:190px;
+  display:block;
+  margin:0 auto 10px;
+
+  filter:
+    drop-shadow(0 0 4px #ffffff)
+    drop-shadow(0 0 8px rgba(255,255,255,.9))
+    drop-shadow(0 0 14px rgba(255,200,0,.85));
+
+  animation:floatLogo 3.5s ease-in-out infinite;
 }
 
-@keyframes float{
-0%{transform:translateY(0)}
-50%{transform:translateY(-14px)}
-100%{transform:translateY(0)}
-}
-
-@keyframes glow{
-0%{filter:drop-shadow(0 0 6px #ffcc00)}
-50%{filter:drop-shadow(0 0 22px #ffcc00)}
-100%{filter:drop-shadow(0 0 6px #ffcc00)}
+@keyframes floatLogo{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
 }
 
 h1{
-font-size:2.3em;
-font-weight:800;
-}
-
-h1 span{
-color:#ffcc00;
+  margin:8px 0 0;
+  font-size:26px;
+  font-weight:700;
 }
 
 .slogan{
-font-weight:300;
-letter-spacing:1px;
-margin-bottom:8px;
+  font-size:15px;
+  letter-spacing:1px;
+  color:#ffcc00;
 }
 
-.live{
-display:inline-block;
-margin:12px auto;
-padding:6px 18px;
-background:#ff0000;
-border-radius:20px;
-font-weight:600;
-animation:blink 1.2s infinite;
+/* PLAYER */
+#player{
+  margin:30px auto;
+  width:90%;
+  max-width:420px;
 }
 
-@keyframes blink{
-0%,100%{opacity:1}
-50%{opacity:.4}
-}
-
-#stream{
-margin-top:20px;
-}
-
+/* BOTONES */
 .buttons{
-margin-top:26px;
+  margin:25px 0;
 }
 
 .buttons a{
-display:block;
-margin:11px 0;
-padding:14px;
-border-radius:35px;
-text-decoration:none;
-font-weight:600;
-background:#ffcc00;
-color:#000;
-transition:.3s;
+  display:inline-block;
+  margin:6px;
+  padding:12px 22px;
+  background:#ffcc00;
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+  border-radius:30px;
+  transition:.3s;
 }
 
 .buttons a:hover{
-background:#ffffff;
-transform:scale(1.06);
+  background:#fff;
+  transform:scale(1.05);
 }
 
+/* FOOTER */
 footer{
-margin-top:22px;
-font-size:.8em;
-opacity:.85;
+  margin-top:30px;
+  padding:15px;
+  font-size:13px;
+  background:rgba(0,0,0,.5);
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <img src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
+       alt="Radio La N 96.3 FM"
+       class="logo">
 
-<!-- LOGO NUEVO SIN FONDO -->
-<img 
-src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
-alt="Radio La N 96.3 FM"
-class="logo"
->
+  <h1>Radio La N 96.3 FM</h1>
+  <div class="slogan">SUENA DIFERENTE</div>
+</header>
 
-<h1>Radio La <span>N</span></h1>
-<p class="slogan">96.3 FM · Suena Diferente</p>
-
-<div class="live">🔴 EN VIVO</div>
-
-<div id="stream"></div>
+<div id="player"></div>
 
 <div class="buttons">
-<a href="#">📲 App oficial (próximamente)</a>
-<a href="#">📘 Facebook oficial</a>
-<a href="https://wa.me/51999999999" target="_blank">💬 WhatsApp Oyentes</a>
-<a href="https://wa.me/51988888888" target="_blank">📢 Publicidad</a>
+  <a href="#" target="_blank">📲 Descarga la App</a>
+  <a href="#" target="_blank">📘 Facebook</a>
+  <a href="https://wa.me/51999999999" target="_blank">📞 WhatsApp Oyentes</a>
 </div>
 
 <footer>
-© 2026 Radio La N 96.3 FM<br>
-La radio que suena diferente 🎧
+  © 2026 Radio La N 96.3 FM · Diseño & Web by Marcony Clavijo
 </footer>
 
-</div>
-
+<!-- PLAYER SCRIPT -->
 <script src="https://sistemahost.com/playergenerator/js/jquery-3.2.1.min.js"></script>
 <script src="https://sistemahost.com/playergenerator/js/player.js"></script>
 
 <script>
-$('#stream').lunaradio({
-streamurl: 'http://sonic.globalstream.pro/8108/',
-radioname: 'Radio La N 96.3 FM',
-userinterface: 'big',
-backgroundcolor: '#ffffff',
-fontcolor: '#000000',
-hightlightcolor: '#a00000',
-fontname: 'Poppins',
-googlefont: 'Poppins',
-scroll: 'true',
-usevisualizer: 'real',
-visualizertype: '1',
-streamtype: 'shoutcast2',
-shoutcastpath: '/stream',
-shoutcastid: '1',
-autoplay: 'false',
-volume: '100',
-usestreamcorsproxy: 'true'
+$('#player').lunaradio({
+  streamurl:'http://sonic.globalstream.pro:8108/',
+  radioname:'Radio La N 96.3 FM',
+  coverimage:'',
+  userinterface:'big',
+  backgroundcolor:'#ffffff',
+  fontcolor:'#000000',
+  hightlightcolor:'#ffcc00',
+  fontname:'Poppins',
+  googlefont:'Poppins',
+  scroll:'true',
+  coverstyle:'animated',
+  usevisualizer:'real',
+  visualizertype:'1',
+  streamtype:'shoutcast2',
+  shoutcastpath:'/stream',
+  shoutcastid:'1',
+  autoplay:'true',
+  volume:'100'
 });
 </script>
 
