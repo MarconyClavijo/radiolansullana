@@ -24,40 +24,51 @@ header{
 /* LOGO */
 .logo{
   width:190px;
-  display:block;
-  margin:0 auto 10px;
-
+  margin-bottom:10px;
   filter:
-    drop-shadow(0 0 4px #ffffff)
-    drop-shadow(0 0 8px rgba(255,255,255,.9))
-    drop-shadow(0 0 14px rgba(255,200,0,.85));
-
+    drop-shadow(0 0 4px #fff)
+    drop-shadow(0 0 10px #ffcc00)
+    drop-shadow(0 0 20px rgba(255,204,0,.8));
   animation:floatLogo 3.5s ease-in-out infinite;
 }
 
 @keyframes floatLogo{
   0%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
+  50%{transform:translateY(-12px)}
   100%{transform:translateY(0)}
 }
 
 h1{
-  margin:8px 0 0;
+  margin:5px 0 0;
   font-size:26px;
-  font-weight:700;
 }
 
 .slogan{
-  font-size:15px;
-  letter-spacing:1px;
   color:#ffcc00;
+  letter-spacing:2px;
+  font-size:14px;
 }
 
 /* PLAYER */
-#player{
+.player-box{
   margin:30px auto;
+  background:#111;
+  border-radius:20px;
+  padding:20px;
   width:90%;
   max-width:420px;
+  box-shadow:0 0 25px rgba(0,0,0,.7);
+}
+
+.player-box h2{
+  margin:0 0 10px;
+  color:#ffcc00;
+  font-size:18px;
+}
+
+audio{
+  width:100%;
+  margin-top:10px;
 }
 
 /* BOTONES */
@@ -82,7 +93,6 @@ h1{
   transform:scale(1.05);
 }
 
-/* FOOTER */
 footer{
   margin-top:30px;
   padding:15px;
@@ -103,44 +113,25 @@ footer{
   <div class="slogan">SUENA DIFERENTE</div>
 </header>
 
-<div id="player"></div>
+<!-- PLAYER -->
+<div class="player-box">
+  <h2>🔴 EN VIVO</h2>
+
+  <audio controls autoplay>
+    <source src="http://s28.myradiostream.com:30500/" type="audio/mpeg">
+    Tu navegador no soporta audio en vivo.
+  </audio>
+</div>
 
 <div class="buttons">
-  <a href="#" target="_blank">📲 Descarga la App</a>
-  <a href="#" target="_blank">📘 Facebook</a>
-  <a href="https://wa.me/51999999999" target="_blank">📞 WhatsApp Oyentes</a>
+  <a href="#">📲 App Oficial</a>
+  <a href="#">📘 Facebook</a>
+  <a href="https://wa.me/51999999999">📞 WhatsApp Oyentes</a>
 </div>
 
 <footer>
-  © 2026 Radio La N 96.3 FM · Diseño & Web by Marcony Clavijo
+  © 2026 Radio La N 96.3 FM · Diseño Web by Marcony Clavijo
 </footer>
-
-<!-- PLAYER SCRIPT -->
-<script src="https://sistemahost.com/playergenerator/js/jquery-3.2.1.min.js"></script>
-<script src="https://sistemahost.com/playergenerator/js/player.js"></script>
-
-<script>
-$('#player').lunaradio({
-  streamurl:'http://sonic.globalstream.pro:8108/',
-  radioname:'Radio La N 96.3 FM',
-  coverimage:'',
-  userinterface:'big',
-  backgroundcolor:'#ffffff',
-  fontcolor:'#000000',
-  hightlightcolor:'#ffcc00',
-  fontname:'Poppins',
-  googlefont:'Poppins',
-  scroll:'true',
-  coverstyle:'animated',
-  usevisualizer:'real',
-  visualizertype:'1',
-  streamtype:'shoutcast2',
-  shoutcastpath:'/stream',
-  shoutcastid:'1',
-  autoplay:'true',
-  volume:'100'
-});
-</script>
 
 </body>
 </html>
