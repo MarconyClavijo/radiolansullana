@@ -17,12 +17,13 @@ body{
 }
 
 header{
-  padding:35px 15px;
+  padding:40px 15px 20px;
 }
 
+/* LOGO */
 .logo{
   width:190px;
-  margin-bottom:10px;
+  margin-bottom:12px;
   filter:
     drop-shadow(0 0 4px #fff)
     drop-shadow(0 0 12px #ffcc00)
@@ -36,47 +37,53 @@ header{
   100%{transform:translateY(0)}
 }
 
-h1{margin:5px 0;font-size:26px;}
-.slogan{color:#ffcc00;letter-spacing:2px;font-size:14px;}
-
-.player-box{
-  margin:30px auto;
-  background:#111;
-  border-radius:25px;
-  padding:25px 15px;
-  width:90%;
-  max-width:420px;
-  box-shadow:0 0 35px rgba(0,0,0,.8);
+h1{
+  margin:6px 0 4px;
+  font-size:26px;
 }
 
-.player-box h2{
-  margin-bottom:15px;
+.slogan{
   color:#ffcc00;
-  font-size:18px;
+  letter-spacing:2px;
+  font-size:14px;
+  margin-bottom:25px;
 }
 
-audio{
-  width:100%;
-  outline:none;
-  border-radius:20px;
+/* BOTÓN PLAY */
+.play-box{
+  margin:35px 0;
 }
 
-.help{
-  margin-top:10px;
-  font-size:13px;
-  color:#ccc;
+.play-box a{
+  display:inline-block;
+  padding:18px 45px;
+  font-size:20px;
+  font-weight:700;
+  color:#000;
+  background:#ffcc00;
+  border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(255,204,0,.8);
+  transition:0.3s;
 }
 
+.play-box a:hover{
+  transform:scale(1.06);
+  background:#fff;
+}
+
+/* BOTONES SECUNDARIOS */
 .buttons{
-  margin:25px 0;
+  margin:30px 0;
 }
 
 .buttons a{
   display:inline-block;
   margin:6px;
   padding:12px 22px;
-  background:#ffcc00;
-  color:#000;
+  background:#111;
+  color:#ffcc00;
+  border:2px solid #ffcc00;
   font-weight:600;
   text-decoration:none;
   border-radius:30px;
@@ -84,12 +91,13 @@ audio{
 }
 
 .buttons a:hover{
-  background:#fff;
-  transform:scale(1.06);
+  background:#ffcc00;
+  color:#000;
 }
 
+/* FOOTER */
 footer{
-  margin-top:30px;
+  margin-top:35px;
   padding:15px;
   font-size:13px;
   background:rgba(0,0,0,.55);
@@ -100,34 +108,30 @@ footer{
 <body>
 
 <header>
-  <img src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
-       alt="Radio La N 96.3 FM"
-       class="logo">
+  <img
+    src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
+    alt="Radio La N 96.3 FM"
+    class="logo">
 
   <h1>Radio La N 96.3 FM</h1>
   <div class="slogan">SUENA DIFERENTE</div>
 </header>
 
-<div class="player-box">
-  <h2>🔴 ESCUCHA EN VIVO</h2>
-
-  <!-- PLAYER REAL -->
-  <audio controls>
-    <source src="https://anghelo.on-air.fm/stream" type="audio/mpeg">
-    Tu navegador no soporta audio en vivo
-  </audio>
-
-  <div class="help">▶ Presiona PLAY para escuchar la radio en vivo</div>
+<!-- BOTÓN PLAY PRINCIPAL -->
+<div class="play-box">
+  <a href="http://anghelo.on-air.fm/free/" target="_blank">
+    ▶ ESCUCHAR RADIO EN VIVO
+  </a>
 </div>
 
+<!-- BOTONES OPCIONALES -->
 <div class="buttons">
-  <a href="#">📲 App Oficial</a>
   <a href="#">📘 Facebook</a>
-  <a href="https://wa.me/51999999999">📞 WhatsApp Oyentes</a>
+  <a href="https://wa.me/51999999999">📞 WhatsApp</a>
 </div>
 
 <footer>
-  © 2026 Radio La N 96.3 FM · Diseño Web by Marcony Clavijo
+  © 2026 Radio La N 96.3 FM · Diseño web: Marcony Clavijo
 </footer>
 
 </body>
