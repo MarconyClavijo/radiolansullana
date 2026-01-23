@@ -49,30 +49,20 @@ h1{
   margin-bottom:25px;
 }
 
-/* BOTÓN PLAY */
-.play-box{
-  margin:35px 0;
+/* PLAYER */
+.player-box{
+  margin:35px auto;
 }
 
-.play-box a{
-  display:inline-block;
-  padding:18px 45px;
-  font-size:20px;
-  font-weight:700;
-  color:#000;
-  background:#ffcc00;
-  border-radius:50px;
-  text-decoration:none;
-  box-shadow:0 0 25px rgba(255,204,0,.8);
-  transition:0.3s;
+audio{
+  width:85%;
+  max-width:420px;
+  outline:none;
+  border-radius:30px;
+  box-shadow:0 0 25px rgba(255,204,0,.7);
 }
 
-.play-box a:hover{
-  transform:scale(1.06);
-  background:#fff;
-}
-
-/* BOTONES SECUNDARIOS */
+/* BOTONES */
 .buttons{
   margin:30px 0;
 }
@@ -117,14 +107,15 @@ footer{
   <div class="slogan">SUENA DIFERENTE</div>
 </header>
 
-<!-- BOTÓN PLAY PRINCIPAL -->
-<div class="play-box">
-  <a href="http://anghelo.on-air.fm/free/" target="_blank">
-    ▶ ESCUCHAR RADIO EN VIVO
-  </a>
+<!-- PLAYER EN VIVO -->
+<div class="player-box">
+  <audio controls autoplay>
+    <source src="https://sonic.globalstream.pro/8110/stream" type="audio/mpeg">
+    Tu navegador no soporta audio en vivo.
+  </audio>
 </div>
 
-<!-- BOTONES OPCIONALES -->
+<!-- BOTONES -->
 <div class="buttons">
   <a href="#">📘 Facebook</a>
   <a href="https://wa.me/51999999999">📞 WhatsApp</a>
