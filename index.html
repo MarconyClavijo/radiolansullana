@@ -109,8 +109,8 @@ footer{
 
 <!-- PLAYER EN VIVO -->
 <div class="player-box">
-  <audio id="radioPlayer" controls preload="none">
-    <source id="radioSource" src="https://stream.zeno.fm/jfjyk4dnuc1vv" type="audio/mpeg">
+  <audio controls autoplay>
+    <source src="https://stream.zeno.fm/jfjyk4dnuc1vv" type="audio/mpeg">
     Tu navegador no soporta audio en vivo.
   </audio>
 </div>
@@ -124,24 +124,6 @@ footer{
 <footer>
   © 2026 Radio La N 96.3 FM · Diseño web: Marcony Clavijo
 </footer>
-
-<script>
-const player = document.getElementById("radioPlayer");
-const source = document.getElementById("radioSource");
-const streamURL = "https://stream.zeno.fm/jfjyk4dnuc1vv";
-
-// Cuando se da PLAY → fuerza volver al tiempo real
-player.addEventListener("play", function () {
-  const newURL = streamURL + "?nocache=" + new Date().getTime();
-  source.src = newURL;
-  player.load();
-});
-
-// Cuando se pausa → limpia el tiempo
-player.addEventListener("pause", function () {
-  player.currentTime = 0;
-});
-</script>
 
 </body>
 </html>
