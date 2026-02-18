@@ -123,16 +123,19 @@ footer{
 const player = document.getElementById("radioPlayer");
 const streamURL = "https://stream.zeno.fm/jfjyk4dnuc1vv";
 
-player.addEventListener("play", function () {
-  if (!player.dataset.live) {
-    player.dataset.live = "true";
-    return;
-  }
+let wasPaused = false;
 
-  player.pause();
-  player.src = streamURL + "?nocache=" + Date.now();
-  player.load();
-  player.play();
+player.addEventListener("pause", function() {
+  wasPaused = true;
+});
+
+player.addEventListener("click", function() {
+  if (wasPaused) {
+    player.src = streamURL + "?live=" + Date.now();
+    player.load();
+    player.play();
+    wasPaused = false;
+  }
 });
 </script>
 
