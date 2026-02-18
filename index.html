@@ -55,7 +55,6 @@ h1{
 audio{
   width:85%;
   max-width:420px;
-  outline:none;
   border-radius:30px;
   box-shadow:0 0 25px rgba(255,204,0,.7);
 }
@@ -104,10 +103,7 @@ footer{
 </header>
 
 <div class="player-box">
-  <audio id="radioPlayer" controls preload="none">
-    <source src="https://stream.zeno.fm/jfjyk4dnuc1vv" type="audio/mpeg">
-    Tu navegador no soporta audio en vivo.
-  </audio>
+  <audio id="radioPlayer" controls preload="none"></audio>
 </div>
 
 <div class="buttons">
@@ -120,22 +116,27 @@ footer{
 </footer>
 
 <script>
-const player = document.getElementById("radioPlayer");
 const streamURL = "https://stream.zeno.fm/jfjyk4dnuc1vv";
+const player = document.getElementById("radioPlayer");
 
-let wasPaused = false;
+// Cuando el usuario da play
+player.addEventListener("play", function () {
 
-player.addEventListener("pause", function() {
-  wasPaused = true;
+  // Si no tiene src activo, crear conexión nueva
+  if (!player.src) {
+    player.src = streamURL + "?t=" + Date.now();
+    player.load();
+  }
+
 });
 
-player.addEventListener("click", function() {
-  if (wasPaused) {
-    player.src = streamURL + "?live=" + Date.now();
-    player.load();
-    player.play();
-    wasPaused = false;
-  }
+// Cuando el usuario da pause
+player.addEventListener("pause", function () {
+
+  // Destruye la conexión completamente
+  player.removeAttribute("src");
+  player.load();
+
 });
 </script>
 
