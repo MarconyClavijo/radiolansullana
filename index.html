@@ -48,15 +48,48 @@ h1{
   margin-bottom:25px;
 }
 
+/* BOTÓN PERSONALIZADO */
 .player-box{
-  margin:35px auto;
+  margin:40px 0;
 }
 
-audio{
-  width:85%;
-  max-width:420px;
-  border-radius:30px;
-  box-shadow:0 0 25px rgba(255,204,0,.7);
+.play-btn{
+  background:#ffcc00;
+  color:#000;
+  border:none;
+  padding:18px 50px;
+  font-size:20px;
+  font-weight:700;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,204,0,.8);
+  transition:.3s;
+}
+
+.play-btn:hover{
+  transform:scale(1.05);
+}
+
+.live-indicator{
+  margin-top:15px;
+  font-size:14px;
+  display:none;
+}
+
+.live-dot{
+  height:10px;
+  width:10px;
+  background:red;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:6px;
+  animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{opacity:1}
+  50%{opacity:.3}
+  100%{opacity:1}
 }
 
 .buttons{
@@ -103,7 +136,11 @@ footer{
 </header>
 
 <div class="player-box">
-  <audio id="radioPlayer" controls preload="none"></audio>
+  <button class="play-btn" id="playButton">▶ ESCUCHAR EN VIVO</button>
+
+  <div class="live-indicator" id="liveIndicator">
+    <span class="live-dot"></span> EN VIVO
+  </div>
 </div>
 
 <div class="buttons">
@@ -117,25 +154,37 @@ footer{
 
 <script>
 const streamURL = "https://stream.zeno.fm/jfjyk4dnuc1vv";
-const player = document.getElementById("radioPlayer");
+const button = document.getElementById("playButton");
+const liveIndicator = document.getElementById("liveIndicator");
 
-// Cuando el usuario da play
-player.addEventListener("play", function () {
+let audio = null;
+let isPlaying = false;
 
-  // Si no tiene src activo, crear conexión nueva
-  if (!player.src) {
-    player.src = streamURL + "?t=" + Date.now();
-    player.load();
+button.addEventListener("click", function() {
+
+  if (!isPlaying) {
+
+    // Crear nueva conexión limpia
+    audio = new Audio(streamURL + "?t=" + Date.now());
+    audio.play();
+
+    isPlaying = true;
+    button.textContent = "■ DETENER";
+    liveIndicator.style.display = "block";
+
+  } else {
+
+    // Destruir conexión completamente
+    audio.pause();
+    audio.src = "";
+    audio.load();
+    audio = null;
+
+    isPlaying = false;
+    button.textContent = "▶ ESCUCHAR EN VIVO";
+    liveIndicator.style.display = "none";
+
   }
-
-});
-
-// Cuando el usuario da pause
-player.addEventListener("pause", function () {
-
-  // Destruye la conexión completamente
-  player.removeAttribute("src");
-  player.load();
 
 });
 </script>
