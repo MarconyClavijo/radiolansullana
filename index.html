@@ -48,7 +48,8 @@ h1{
   margin-bottom:25px;
 }
 
-/* BOTÓN PERSONALIZADO */
+/* PLAYER */
+
 .player-box{
   margin:40px 0;
 }
@@ -92,6 +93,16 @@ h1{
   100%{opacity:1}
 }
 
+/* CANCION */
+
+.song-title{
+  margin-top:25px;
+  font-size:16px;
+  color:#ffcc00;
+}
+
+/* BOTONES */
+
 .buttons{
   margin:30px 0;
 }
@@ -126,33 +137,42 @@ footer{
 <body>
 
 <header>
-  <img
-    src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
-    alt="Radio La N 96.3 FM"
-    class="logo">
 
-  <h1>Radio La N 96.3 FM</h1>
-  <div class="slogan">SUENA DIFERENTE</div>
+<img
+src="https://user1472.na.imgto.link/public/20260117/la-n-removebg-preview.avif"
+alt="Radio La N 96.3 FM"
+class="logo">
+
+<h1>Radio La N 96.3 FM</h1>
+<div class="slogan">SUENA DIFERENTE</div>
+
 </header>
 
 <div class="player-box">
-  <button class="play-btn" id="playButton">▶ ESCUCHAR EN VIVO</button>
 
-  <div class="live-indicator" id="liveIndicator">
-    <span class="live-dot"></span> EN VIVO
-  </div>
+<button class="play-btn" id="playButton">▶ ESCUCHAR EN VIVO</button>
+
+<div class="live-indicator" id="liveIndicator">
+<span class="live-dot"></span> EN VIVO
+</div>
+
+<div class="song-title">
+🎵 <span id="songtitle">Cargando canción...</span>
+</div>
+
 </div>
 
 <div class="buttons">
-  <a href="#">📘 Facebook</a>
-  <a href="https://wa.me/51999999999">📞 WhatsApp</a>
+<a href="#">📘 Facebook</a>
+<a href="https://wa.me/51999999999">📞 WhatsApp</a>
 </div>
 
 <footer>
-  © 2026 Radio La N 96.3 FM · Diseño web: Marcony Clavijo
+© 2026 Radio La N 96.3 FM · Diseño web: Marcony Clavijo
 </footer>
 
 <script>
+
 const streamURL = "https://stream.zeno.fm/jfjyk4dnuc1vv";
 const button = document.getElementById("playButton");
 const liveIndicator = document.getElementById("liveIndicator");
@@ -162,32 +182,35 @@ let isPlaying = false;
 
 button.addEventListener("click", function() {
 
-  if (!isPlaying) {
+if (!isPlaying) {
 
-    // Crear nueva conexión limpia
-    audio = new Audio(streamURL + "?t=" + Date.now());
-    audio.play();
+audio = new Audio(streamURL + "?t=" + Date.now());
+audio.play();
 
-    isPlaying = true;
-    button.textContent = "■ DETENER";
-    liveIndicator.style.display = "block";
+isPlaying = true;
+button.textContent = "■ DETENER";
+liveIndicator.style.display = "block";
 
-  } else {
+} else {
 
-    // Destruir conexión completamente
-    audio.pause();
-    audio.src = "";
-    audio.load();
-    audio = null;
+audio.pause();
+audio.src = "";
+audio.load();
+audio = null;
 
-    isPlaying = false;
-    button.textContent = "▶ ESCUCHAR EN VIVO";
-    liveIndicator.style.display = "none";
+isPlaying = false;
+button.textContent = "▶ ESCUCHAR EN VIVO";
+liveIndicator.style.display = "none";
 
-  }
+}
 
 });
+
 </script>
+
+<!-- SCRIPT QUE TRAE NOMBRE DE CANCION -->
+
+<script id='sonic_js' data-port='8222' src='https://radiostreaming.pro/cp/widgets.js?r=891'></script>
 
 </body>
 </html>
