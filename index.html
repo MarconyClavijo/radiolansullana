@@ -208,9 +208,35 @@ liveIndicator.style.display = "none";
 
 </script>
 
-<!-- SCRIPT QUE TRAE NOMBRE DE CANCION -->
+<!-- CANCION ACTUAL -->
 
-<script id='sonic_js' data-port='8222' src='https://radiostreaming.pro/cp/widgets.js?r=891'></script>
+<script>
+
+function obtenerCancion(){
+
+fetch("https://radiostreaming.pro:8222/currentsong?sid=1")
+
+.then(response => response.text())
+
+.then(data => {
+
+document.getElementById("songtitle").textContent = data;
+
+})
+
+.catch(() => {
+
+document.getElementById("songtitle").textContent = "Radio La N en vivo";
+
+});
+
+}
+
+setInterval(obtenerCancion,5000);
+
+obtenerCancion();
+
+</script>
 
 </body>
 </html>
