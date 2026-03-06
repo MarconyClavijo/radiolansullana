@@ -48,8 +48,6 @@ h1{
   margin-bottom:25px;
 }
 
-/* PLAYER */
-
 .player-box{
   margin:40px 0;
 }
@@ -93,15 +91,11 @@ h1{
   100%{opacity:1}
 }
 
-/* CANCION */
-
 .song-title{
   margin-top:25px;
   font-size:16px;
   color:#ffcc00;
 }
-
-/* BOTONES */
 
 .buttons{
   margin:30px 0;
@@ -208,33 +202,23 @@ liveIndicator.style.display = "none";
 
 </script>
 
-<!-- CANCION ACTUAL -->
+<!-- WIDGET SONICPANEL -->
+
+<div id="sonic_nowplaying" style="display:none;"></div>
+
+<script id="sonic_js" data-port="8222" src="https://radiostreaming.pro/cp/widgets.js?r=992"></script>
 
 <script>
 
-function obtenerCancion(){
+setInterval(function(){
 
-fetch("https://radiostreaming.pro:8222/currentsong?sid=1")
+let song = document.getElementById("sonic_nowplaying");
 
-.then(response => response.text())
-
-.then(data => {
-
-document.getElementById("songtitle").textContent = data;
-
-})
-
-.catch(() => {
-
-document.getElementById("songtitle").textContent = "Radio La N en vivo";
-
-});
-
+if(song){
+document.getElementById("songtitle").textContent = song.textContent;
 }
 
-setInterval(obtenerCancion,5000);
-
-obtenerCancion();
+},2000);
 
 </script>
 
